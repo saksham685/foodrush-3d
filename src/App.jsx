@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { CartProvider } from './context/CartContext';
 import { AuthProvider } from './context/AuthContext';
@@ -23,7 +23,7 @@ import './styles/Components.css';
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <LocationProvider>
         <AuthProvider>
           <CartProvider>
@@ -47,7 +47,7 @@ function App() {
                   <div style={{ fontSize: 100, animation: 'float 4s ease-in-out infinite' }}>🍕</div>
                   <h1 style={{ fontSize: 48, fontWeight: 900, color: 'var(--primary)' }}>404</h1>
                   <p style={{ fontSize: 18, color: 'var(--text-muted)', marginBottom: 8 }}>Oops! This page got eaten.</p>
-                  <a href="/" className="btn-primary">🏠 Go Home</a>
+                  <a href="#/" className="btn-primary">🏠 Go Home</a>
                 </div>
               } />
             </Routes>
@@ -56,7 +56,7 @@ function App() {
           </CartProvider>
         </AuthProvider>
       </LocationProvider>
-    </BrowserRouter>
+    </Router>
   );
 }
 
